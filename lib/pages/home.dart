@@ -1,3 +1,7 @@
+import 'package:fiksi_eye_distance/pages/about.dart';
+import 'package:fiksi_eye_distance/pages/auto-turn-off.dart';
+import 'package:fiksi_eye_distance/pages/screen-distance.dart';
+import 'package:fiksi_eye_distance/pages/privacy.dart'; // Import the privacy.dart file
 import 'package:fiksi_eye_distance/util/feature_box.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +18,27 @@ class _homeState extends State<home> {
   final double verticalPadding = 25;
 
   List myFeatures = [
-    ["Auto Turn Off", "lib/icons/icons8-power-50.png", true],
-    ["Screen Distance", "lib/icons/icons8-eye-50 -green.png", false],
-    ["About", "lib/icons/icons8-about-48.png", false],
-    ["Privacy", "lib/icons/icons8-privacy-48.png", false],
+    [
+      "Auto Turn Off",
+      "lib/icons/icons8-power-50.png",
+      true,
+      Auto_Turn_Off_Page()
+    ],
+    [
+      "Screen Distance",
+      "lib/icons/icons8-eye-50 -green.png",
+      false,
+      Screen_Distance_Page()
+    ],
+    ["About", "lib/icons/icons8-about-48.png", false, AboutPage()],
+    [
+      "Privacy",
+      "lib/icons/icons8-privacy-48.png",
+      false,
+      PrivacyPage()
+    ], // Corrected line
   ];
+
   @override
   Widget build(BuildContext context) {
     const double horizontalPadding = 25.0; // Define the variable
@@ -62,6 +82,7 @@ class _homeState extends State<home> {
                   Features: myFeatures[index][0],
                   iconpath: myFeatures[index][1],
                   powerOn: myFeatures[index][2],
+                  redirectPage: myFeatures[index][3],
                 );
               },
             ),

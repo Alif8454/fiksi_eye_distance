@@ -6,12 +6,14 @@ class FeaturesBox extends StatefulWidget {
   final String Features;
   final String iconpath;
   final bool powerOn;
+  final String redirectPage;
 
   const FeaturesBox({
     Key? key,
     required this.Features,
     required this.iconpath,
     required this.powerOn,
+    required this.redirectPage,
   }) : super(key: key);
 
   @override
@@ -58,25 +60,45 @@ class _FeaturesBoxState extends State<FeaturesBox> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Switch(
-                    value: _powerOn,
-                    onChanged: (value) {
-                      setState(() {
-                        _powerOn = value;
-                      });
-                      if (_powerOn) {
-                        // Implement the function to detect screen distance and turn off the phone
+                if (widget.powerOn)
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Switch(
+                      value: _powerOn,
+                      onChanged: (value) {
+                        setState(() {
+                          _powerOn = value;
+                        });
+                        if (_powerOn) {
+                          // Implement the function to detect screen distance and turn off the phone
+                          // For example:
+                          final ScreenDistanceDetector detector =
+                              ScreenDistanceDetector();
+                          detector.startDetection();
+                        }
+                      },
+                      activeTrackColor: Color(0xff176B87),
+                    ),
+                  )
+                else
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_forward),
+                      onPressed: () {
+                        // Implement the function to redirect to different page
                         // For example:
-                        final ScreenDistanceDetector detector =
-                            ScreenDistanceDetector();
-                        detector.startDetection();
-                      }
-                    },
-                    activeTrackColor: Color(0xff176B87),
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => AboutPage()),
+                        // );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => widget.redirectPage),
+                        // );
+                      },
+                    ),
                   ),
-                ),
               ],
             ),
           ],
