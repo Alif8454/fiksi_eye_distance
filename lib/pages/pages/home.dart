@@ -1,7 +1,7 @@
-import 'package:fiksi_eye_distance/pages/about.dart';
-import 'package:fiksi_eye_distance/pages/auto-turn-off.dart';
-import 'package:fiksi_eye_distance/pages/screen-distance.dart';
-import 'package:fiksi_eye_distance/pages/privacy.dart'; // Import the privacy.dart file
+import 'package:fiksi_eye_distance/pages/pages/about.dart';
+import 'package:fiksi_eye_distance/pages/pages/auto-turn-off.dart';
+import 'package:fiksi_eye_distance/pages/pages/screen-distance.dart';
+import 'package:fiksi_eye_distance/pages/pages/privacy.dart'; // Import the privacy.dart file
 import 'package:fiksi_eye_distance/util/feature_box.dart';
 import 'package:flutter/material.dart';
 

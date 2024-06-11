@@ -1,4 +1,4 @@
-import 'package:fiksi_eye_distance/pages/home.dart';
+import 'package:fiksi_eye_distance/pages/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'pages/intro-page.dart';
 import 'package:getwidget/getwidget.dart';
