@@ -27,7 +27,7 @@ class _AutoTurnOffPageState extends State<AutoTurnOffPage> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.only(left: 10), // Add padding to the left
+                  const EdgeInsets.only(left: 40), // Add padding to the left
               child: Switch(
                 value: _isAutoTurnOffEnabled,
                 onChanged: (value) {
